@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Contact | Radix Micro Technologies</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <header class="header">
+
+  <!-- LEFT SIDE : LOGO + COMPANY NAME -->
+  <div class="brand">
+
+    <a href="index.html">
+      <img src="assets/images/logo.png"
+           alt="Radix Micro Technologies logo">
+    </a>
+
+    <div class="company-name">
+      <h1>Radix</h1>
+      <h2>MICRO TECHNOLOGIES PVT LTD.</h2>
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT SIDE : NAVIGATION -->
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <nav id="nav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <!--- PRODUCTS DROPDOWN -->
+    <div class="dropdown">
+            
+        <a href="products.html" class="dropbtn">
+           Products <span>▼</span>
+        </a>
+  
+        <div class="dropdown-menu">
+  
+            <a href="obc.html">
+              On-Board Computer
+            </a>
+    
+            <a href="rf-module.html">
+              RFC & NG Module
+            </a>
+    
+            <a href="elpc.html">
+              Embedde Launch Pad Computer
+            </a>
+    
+            <a href="ethernet.html">
+              Ethernet Switch
+            </a>
+    
+            <a href="4ch.html">
+              Search & Monitoring Receiver
+            </a>
+  
+        </div>
+        
+    </div>
+    
+    <a href="expertise.html">
+       Expertise
+    </a>
+    
+    <a href="facilitise.html">
+       Facilitise
+    </a>
+    
+    <a href="about.html">
+       About Us
+    </a>
+
+    <!-- CONTACT BUTTON -->
+    <a href="contact.html" class="contact-button">
+       GET IN TOUCH
+    </a>
+
+  </nav>
+  
+    </header>
+    <section class="page-hero"><span class="eyebrow">GET IN TOUCH</span>
+        <h1>Let's Build Something Reliable</h1>
+        <p>Tell us about your electronic, embedded or system-integration requirement.</p>
+    </section>
+    <section class="section contact-grid">
+        <div><span class="eyebrow">CONTACT DETAILS</span>
+            <h2>Radix Micro Technologies Pvt. LTD.</h2>
+            <div class="contact-item"><b>Email</b><span>info@radixmicrotechnologies.com</span></div>
+            <div class="contact-item"><b>Location</b><span>India</span></div>
+            <div class="contact-item"><b>Business</b><span>Defence • Aerospace • Industrial • Mission-Critical
+                    Electronics</span></div>
+        </div>
+        <form onsubmit="sendForm(event)"><input required placeholder="Your Name"><input type="email" required
+                placeholder="Email Address"><input placeholder="Company"><textarea required rows="6"
+                placeholder="Tell us about your requirement"></textarea><button class="btn" type="submit">Send
+                Enquiry</button>
+            <p id="form-msg"></p>
+        </form>
+    </section>
+    <footer>
+        <div><strong>Radix Micro Technologies Pvt. LTD.</strong>
+            <p>Advanced electronic and embedded systems.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4><a href="index.html">Home</a><a href="products.html">Products</a><a
+                href="about.html">About Us</a>
+        </div>
+    </footer>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
