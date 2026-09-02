@@ -433,6 +433,132 @@ a {
 
 /*------------------------------------------------------------------*/
 
+/* =========================
+   TEXT ANIMATION
+========================= */
+.hero-slide.active .small-title {
+    animation: slideUp 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+
+.hero-slide.active h1 {
+    animation: slideUp 0.9s ease forwards;
+    animation-delay: 0.45s;
+}
+
+
+.hero-slide.active p {
+    animation: slideUp 0.9s ease forwards;
+    animation-delay: 0.65s;
+}
+
+
+.hero-slide.active .buttons {
+    animation: slideUp 0.9s ease forwards;
+    animation-delay: 0.85s;
+}
+
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   DOTS
+========================= */
+.slide-dots {
+    position: absolute;
+    z-index: 10;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(20,40,70,0.35);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.dot.active {
+    width: 32px;
+    border-radius: 10px;
+    background: #1717b8;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 100vh;
+        min-height: 650px;
+    }
+
+
+    .hero-content {
+        width: 88%;
+        padding-top: 80px;
+    }
+
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+        max-width: 500px;
+    }
+
+
+    .hero p {
+        font-size: 15px;
+        max-width: 500px;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+
+    .btn {
+        min-width: 190px;
+        height: 50px;
+    }
+
+
+    .overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(255,255,255,0.95),
+                rgba(255,255,255,0.65)
+            );
+    }
+
+}
+
+/*----------------------------------------------------------------*/
 .services-slider {
     width: 100%;
     overflow: hidden;
@@ -446,7 +572,7 @@ a {
     align-items: center;
     width: max-content;
 
-    animation: infiniteScroll 40s linear infinite;
+    animation: infiniteScroll 30s linear infinite;
 }
 
 .service-item {
