@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Arial, Helvetica, sans-serif;
-    color: #0660f0;
+    color: #1717b8;
     background: #fff;
     line-height: 1.65
 }
@@ -73,7 +73,7 @@ a {
 }
 
 .company-name h1 {
-    color: #0e14c9;
+    color: #1717b8;
     font-size: 30px;
     font-weight: 800;
     line-height: 0.7;
@@ -81,7 +81,7 @@ a {
 }
 
 .company-name h2 {
-    color: #0b12dd;
+    color: #1717b8;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.3px;
@@ -93,7 +93,6 @@ a {
 /*==========================
        NAVIGATION
 ============================*/
-
 .header nav {
     margin-left: auto;
     display: flex;
@@ -223,22 +222,36 @@ a {
 
 .menu-btn {
     display: none;
-    background: white;
-    color: #000;
+    background: #1717b8;
+    color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 22%;
     width: 45px;
     height: 45px;
     font-size: 25px;
+     font-weight: bold;
     cursor: pointer;
 }
 
+/* MOBILE / SMALL SCREEN */
 @media (max-width: 768px) {
+    .header {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        min-height: 75px;
+    }
+
     .menu-btn {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         position: absolute;
-        left: 20px;
-        top: 15px;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+
         z-index: 2000;
     }
 }
@@ -261,30 +274,23 @@ a {
 .hero-slide {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     background-size: cover;
     background-position: center;
-
     opacity: 0;
-
     transform: scale(1.05);
 
     transition:
         opacity 1.2s ease-in-out,
         transform 7s ease-in-out;
-
     pointer-events: none;
 }
 
 
 .hero-slide.active {
     opacity: 1;
-
     transform: scale(1);
-
     pointer-events: auto;
 }
 
@@ -292,7 +298,6 @@ a {
 /* =========================
    WHITE IMAGE OVERLAY
 ========================= */
-
 .overlay {
     position: absolute;
     inset: 0;
@@ -311,22 +316,16 @@ a {
 /* =========================
    CONTENT
 ========================= */
-
 .hero-content {
     position: relative;
     z-index: 2;
-
     width: 90%;
     max-width: 1250px;
-
     height: 100%;
-
     margin: auto;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     padding-bottom: 40px;
 }
 
@@ -334,20 +333,13 @@ a {
 /* =========================
    SMALL TITLE
 ========================= */
-
 .small-title {
     font-size: 15px;
-
     font-weight: 700;
-
     letter-spacing: 1px;
-
     color: #162235;
-
     margin-bottom: 28px;
-
     opacity: 0;
-
     transform: translateY(30px);
 }
 
@@ -355,50 +347,34 @@ a {
 /* =========================
    MAIN HEADING
 ========================= */
-
 .hero h1 {
     font-size: clamp(45px, 5vw, 76px);
-
     line-height: 0.98;
-
     font-weight: 900;
-
     letter-spacing: -3px;
-
     color: #07101f;
-
     max-width: 720px;
-
     margin-bottom: 32px;
-
     opacity: 0;
-
     transform: translateY(40px);
 }
 
 
 .hero h1 span {
-    color: #1261d6;
+    color: #1717b8;
 }
 
 
 /* =========================
    DESCRIPTION
 ========================= */
-
 .hero p {
     max-width: 650px;
-
     font-size: 17px;
-
     line-height: 1.7;
-
     color: #253044;
-
     margin-bottom: 38px;
-
     opacity: 0;
-
     transform: translateY(40px);
 }
 
@@ -406,348 +382,131 @@ a {
 /* =========================
    BUTTONS
 ========================= */
-
 .buttons {
     display: flex;
-
     gap: 18px;
-
     opacity: 0;
-
     transform: translateY(40px);
 }
 
 
 .btn {
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     min-width: 200px;
-
     height: 55px;
-
     padding: 0 25px;
-
     text-decoration: none;
-
     font-size: 14px;
-
     font-weight: 700;
-
     transition: all 0.3s ease;
 }
 
 
 /* BLUE BUTTON */
-
 .btn.primary {
-    background: #075bd7;
-
+    background: #1717b8;
     color: white;
-
-    border: 1px solid #075bd7;
+    border: 1px solid #1717b8;
 }
 
 
 .btn.primary:hover {
-    background: #0047b5;
-
+    background: #1717b8;
     transform: translateY(-3px);
 }
 
 
 /* WHITE BUTTON */
-
 .btn.secondary {
     background: rgba(255,255,255,0.85);
-
     color: #172236;
-
     border: 1px solid #bfc7d4;
 }
 
 
 .btn.secondary:hover {
     background: white;
-
     transform: translateY(-3px);
 }
 
 /*------------------------------------------------------------------*/
 
-/* =========================
-   TEXT ANIMATION
-========================= */
-
-.hero-slide.active .small-title {
-    animation: slideUp 0.8s ease forwards;
-    animation-delay: 0.3s;
-}
-
-
-.hero-slide.active h1 {
-    animation: slideUp 0.9s ease forwards;
-    animation-delay: 0.45s;
-}
-
-
-.hero-slide.active p {
-    animation: slideUp 0.9s ease forwards;
-    animation-delay: 0.65s;
-}
-
-
-.hero-slide.active .buttons {
-    animation: slideUp 0.9s ease forwards;
-    animation-delay: 0.85s;
-}
-
-
-@keyframes slideUp {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-
-}
-
-
-/* =========================
-   DOTS
-========================= */
-
-.slide-dots {
-    position: absolute;
-
-    z-index: 10;
-
-    bottom: 35px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    display: flex;
-
-    gap: 10px;
-}
-
-
-.dot {
-    width: 10px;
-
-    height: 10px;
-
-    border-radius: 50%;
-
-    background: rgba(20,40,70,0.35);
-
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-}
-
-
-.dot.active {
-    width: 32px;
-
-    border-radius: 10px;
-
-    background: #075bd7;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-    .hero {
-        height: 100vh;
-
-        min-height: 650px;
-    }
-
-
-    .hero-content {
-        width: 88%;
-
-        padding-top: 80px;
-    }
-
-
-    .hero h1 {
-        font-size: 43px;
-
-        letter-spacing: -2px;
-
-        max-width: 500px;
-    }
-
-
-    .hero p {
-        font-size: 15px;
-
-        max-width: 500px;
-    }
-
-
-    .buttons {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 12px;
-    }
-
-
-    .btn {
-        min-width: 190px;
-
-        height: 50px;
-    }
-
-
-    .overlay {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(255,255,255,0.95),
-                rgba(255,255,255,0.65)
-            );
-    }
-
-}
-
-/* =========================
-   SCROLLING BAR
-========================= */
-
-.scroll-container {
+.services-slider {
     width: 100%;
-    height: 76px;
-
-    background: #07399d;
-
     overflow: hidden;
-
-    display: flex;
-    align-items: center;
-
+    background: #1717b8;
+    padding: 8px 0;
     white-space: nowrap;
-
-    border-top: 2px solid #d8e5ff;
-    border-bottom: 2px solid #d8e5ff;
 }
 
-
-/* =========================
-   MOVING CONTENT
-========================= */
-
-.scroll-content {
+.services-track {
     display: flex;
     align-items: center;
-
     width: max-content;
 
-    animation: scrolling 25s linear infinite;
+    animation: infiniteScroll 40s linear infinite;
 }
 
-
-/* =========================
-   INDIVIDUAL ITEM
-========================= */
-
-.scroll-item {
+.service-item {
     display: flex;
-
     align-items: center;
 
-    gap: 12px;
+    min-width: 190px;
+    height: 58px;
 
-    margin: 0 35px;
+    padding: 0 20px;
+
+    flex-shrink: 0;
 }
 
+.service-icon {
+    width: 40px;
+    height: 40px;
 
-/* =========================
-   ICON
-========================= */
-
-.icon {
-    width: 38px;
-    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     border: 1px solid rgba(255,255,255,0.25);
-
     border-radius: 8px;
+
+    color: #00aaff;
+    font-size: 18px;
+
+    margin-right: 12px;
+
+    flex-shrink: 0;
+}
+
+.service-text {
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 15px;
+
+    white-space: nowrap;
+}
+
+.separator {
+    color: #ff8c00;
+    font-size: 18px;
 
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    color: white;
-
-    font-size: 17px;
-}
-
-
-/* =========================
-   TEXT
-========================= */
-
-.text {
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    color: white;
-
-    font-size: 13px;
-
-    line-height: 17px;
-
-    min-width: 90px;
-}
-
-.text strong {
-    font-weight: 600;
-}
-
-
-/* =========================
-   ORANGE DOT
-========================= */
-
-.separator {
-    color: #ff8b22;
-
-    font-size: 18px;
 
     margin: 0 5px;
+
+    flex-shrink: 0;
 }
 
 
-/* =========================
-   SCROLL ANIMATION
-========================= */
-
-@keyframes scrolling {
-
+/* INFINITE SCROLL */
+@keyframes infiniteScroll {
     from {
         transform: translateX(0);
     }
@@ -755,42 +514,11 @@ a {
     to {
         transform: translateX(-50%);
     }
-
 }
 
-
-/* =========================
-   PAUSE WHEN MOUSE HOVERS
-========================= */
-
-.scroll-container:hover .scroll-content {
+/* STOP WHEN CURSOR IS PLACED */
+.services-slider:hover .services-track {
     animation-play-state: paused;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-    .scroll-container {
-        height: 65px;
-    }
-
-    .scroll-item {
-        margin: 0 20px;
-    }
-
-    .icon {
-        width: 34px;
-        height: 34px;
-    }
-
-    .text {
-        font-size: 12px;
-    }
-
 }
 
 /*------------------------------------------------------------------*/
